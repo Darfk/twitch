@@ -118,7 +118,7 @@ func StructToQuery(s interface{}) (query *url.Values, err error) {
 		}
 		zip = append(zip, key, value.Field(i).Interface())
 	}
-	return Z	ipQuery(zip...)
+	return ZipQuery(zip...)
 }
 
 func (api *API) dataRequest(method, path string, in interface{}, out interface{}) (data DataResponse, err error) {
