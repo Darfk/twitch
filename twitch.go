@@ -2,6 +2,7 @@ package twitch
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"log"
@@ -10,7 +11,6 @@ import (
 	"reflect"
 	"strconv"
 
-	"github.com/gin-gonic/gin/json"
 	"golang.org/x/oauth2/clientcredentials"
 	"golang.org/x/oauth2/twitch"
 )
@@ -118,7 +118,7 @@ func StructToQuery(s interface{}) (query *url.Values, err error) {
 		}
 		zip = append(zip, key, value.Field(i).Interface())
 	}
-	return ZipQuery(zip...)
+	return Z	ipQuery(zip...)
 }
 
 func (api *API) dataRequest(method, path string, in interface{}, out interface{}) (data DataResponse, err error) {
